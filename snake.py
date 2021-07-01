@@ -5,7 +5,7 @@ import keyboard
 
 
 class Snake:
-    def __init__(self, frame_x, frame_y, snake_len, move_dir, speed):
+    def __init__(self, frame_x, frame_y, snake_len, move_dir, speed, mode=0):
         self.snake_xy = []
         self.snake_len = snake_len
         self.snake_pos_x = 5
@@ -19,6 +19,7 @@ class Snake:
         self.frame_y = frame_y
         self.game = True
         self.score = 0
+        self.mode = mode
 
     def get_snake(self):
         if self.move_dir == 'left':
@@ -44,8 +45,13 @@ class Snake:
         self.__snake_size_check()
 
     def __snake_size_check(self):
-        if len(self.snake_xy) > self.snake_len:
-            self.snake_xy.pop(0)
+        if self.mode == 1:
+            if len(self.snake_xy) > self.snake_len + self.score:
+                self.snake_xy.pop(0)
+
+        else:
+            if len(self.snake_xy) > self.snake_len:
+                self.snake_xy.pop(0)
 
     def snake_pos(self):
         return self.snake_xy
