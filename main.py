@@ -5,11 +5,11 @@ height = 10
 # Snake settings:
 head = '@'
 tail = '*'
-snake_len = 6
+snake_len = 1
 speed = .2
 snake_dir = ''
 
-snake = Snake(width, height, snake_len, snake_dir, speed)
+snake = Snake(width, height, snake_len, snake_dir, speed, 1)
 snake.get_new_fruit()
 snake.get_snake()
 snake.keyboard()
