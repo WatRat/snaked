@@ -5,7 +5,7 @@ height = 10
 # Snake settings:
 head = '@'
 tail = '*'
-snake_len = 1
+snake_len = 4
 speed = .2
 snake_dir = ''
 
